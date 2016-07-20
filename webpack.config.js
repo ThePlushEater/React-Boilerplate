@@ -13,7 +13,7 @@ var definePlugin = new webpack.DefinePlugin({
 
 var config = {
   entry: {
-    'client': path.join(APP_DIR, './client.jsx')
+    'client': path.join(APP_DIR, './client.js')
   },
   output: {
     path: path.join(BUILD_DIR, "./js/"),

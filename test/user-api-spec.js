@@ -1,3 +1,0 @@
-describe('user data', function() {
-  
-});
