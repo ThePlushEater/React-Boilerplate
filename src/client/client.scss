@@ -1,0 +1,26 @@
+// normalize and fonts scss files are need to be included only once.
+@import "./scss/normalize.scss";
+@import "./scss/fonts.scss";
+
+@import "./scss/variables.scss";
+@import "./scss/mixin.scss";
+
+#app {
+  width: 100%;
+}
+
+/* Scroll bar style */
+::-webkit-scrollbar {
+  width: 4px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(187,168,164,0.3);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(187,168,164,0.1);
+}
