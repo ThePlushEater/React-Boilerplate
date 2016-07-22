@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var Settings = require('./src/constraints/settings.json');
+var HistoryApiFallback = require('connect-history-api-fallback')
 
 var BUILD_DIR = path.resolve(__dirname, './dist');
 var APP_DIR = path.resolve(__dirname, './src/client');
@@ -26,7 +27,11 @@ var config = {
       host: process.env.IP + Settings.uBaseNameForWebPack || 'localhost' + Settings.uBaseNameForWebPack,
       port: process.env.PORT || 3000,
       open: true,
-      proxy: 'http://localhost' + Settings.uBaseNameForWebPack
+      server: {
+        baseDir: "./",
+        middleware: [ HistoryApiFallback() ]
+      }
+      // proxy: 'http://localhost' + Settings.uBaseNameForWebPack
     }),
     new webpack.ProvidePlugin({
       // 'createjs': 'imports?this=>global!exports?createjs!createjs',
